@@ -1,0 +1,11 @@
+Aula 01
+
+Temas abordados : LGPD, Primeiros vírus a história, linha do tempo da cibersegurança
+
+Links fornecidos : 
+
+- Prejuízos com ciberataques podem ultrapassar 6 trilhões de dólares em 2021 : https://www.insper.edu.br/pt/noticias/2021/11/prejuizos-com-ciberataques-podem-ultrapassar-6-trilhoes-de-dolar
+
+- Malware dos anos 80: o vírus de computador Brain e o worm Morris :https://www.welivesecurity.com/br/2018/11/05/malware-dos-anos-80-o-virus-de-computador-brain-e-o-worm-morris/
+
+- LGPD : https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm
