@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "nome": "Furadeira X200",
+    "categoria": "Furadeiras",
+    "potencia": "650 W",
+    "voltagem": "220 V",
+    "peso": "1,8 kg",
+    "preco": 349.90,
+    "imagem": "/assets/furadeira.png",
+    "descricao": "Furadeira de impacto para atividades de manutenção e montagem."
+  },
+  {
+    "id": 2,
+    "nome": "Esmerilhadeira G900",
+    "categoria": "Esmerilhadeiras",
+    "potencia": "900 W",
+    "voltagem": "220 V",
+    "peso": "2,1 kg",
+    "preco": 429.90,
+    "imagem": "/assets/esmerilhadeira.png",
+    "descricao": "Esmerilhadeira compacta para corte e acabamento."
+  },
+  {
+    "id": 3,
+    "nome": "Lixadeira L500",
+    "categoria": "Lixadeiras",
+    "potencia": "500 W",
+    "voltagem": "220 V",
+    "peso": "1,6 kg",
+    "preco": 299.90,
+    "imagem": "/assets/lixadeira.png",
+    "descricao": "Lixadeira para acabamento de superfícies."
+  },
+  {
+    "id": 4,
+    "nome": "Serra S1200",
+    "categoria": "Serras",
+    "potencia": "1200 W",
+    "voltagem": "220 V",
+    "peso": "3,4 kg",
+    "preco": 589.90,
+    "imagem": "/assets/serra.png",
+    "descricao": "Serra elétrica para operações de corte."
+  }
+]
