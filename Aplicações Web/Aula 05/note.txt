@@ -1,0 +1,22 @@
+Web
+ 
+--Criando 01--
+ 
+1 - python -m venv venv
+ 
+--Ativando venv antes de tudo
+ 
+2 - venv\Scripts\Activate.ps1
+ 
+--Criando 02--
+ 
+3 - pip install django djangorestframework django-cors-headers
+4 - django-admin startproject loja .
+5 - python manage.py startapp produtos
+ 
+-- Codigo --
+ 
+6 - python manage.py migrate
+7 - python manage.py createsuperuser
+8 - python manage.py makemigratons
+9 - python manage.py runserver 0.0.0.0:8000
