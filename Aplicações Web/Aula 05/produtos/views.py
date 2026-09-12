@@ -1,8 +1,15 @@
 from django.shortcuts import render
 from rest_framework import viewsets # importa o viewset a partir da biblioteca restframework
+from .models import Pedido
+from .serializers import StatusPedidoSerializer
+from rest_framework import mixins
 
-from .serializers import (ProdutoSerializer, CategoriaSerializer, ClienteSerializer, PedidoSerializer, ItemPedidoSerializer) 
+from .serializers import (ProdutoSerializer, CategoriaSerializer, ClienteSerializer, PedidoSerializer, ItemPedidoSerializer,StatusPedidoSerializer) 
 from .models import (Produto, Categoria, Cliente, Pedido, ItemPedido)  
+
+from rest_framework.permissions import(
+    AllowAny, IsAuthenticated
+)
 # importando metodo para exibir uma pagina home
 
 from django.http import HttpResponse
@@ -15,6 +22,19 @@ def home(request):
 class ProdutoViewSet(viewsets.ModelViewSet):
     queryset = Produto.objects.all().order_by("-id")
     serializer_class = ProdutoSerializer
+    
+    # função de permissao
+    
+    def get_permissions(self):
+        
+        # Permite que qualquer pessoa consulte produtos
+        if self.action in ['list', 'retrieve']:
+            
+            return [AllowAny()]
+        
+        # Para poder cadastrar, editar ou excluir o usuario precisa estar autenticado
+        
+        return [IsAuthenticated()]
 
 
 # Categoria
@@ -47,3 +67,24 @@ class ItemPedidoViewSet(viewsets.ModelViewSet):
     queryset = ItemPedido.objects.all().order_by("-id")
     serializer_class = ItemPedidoSerializer
 # Create your views here.
+
+
+class PedidoViewSet(viewsets.ModelViewSet):
+    queryset = Pedido.objects.all()
+    serializer_class = PedidoSerializer
+
+
+
+
+
+
+
+class StatusPedidoViewSet(
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.UpdateModelMixin,
+    viewsets.GenericViewSet
+):
+
+    queryset = Pedido.objects.all()
+    serializer_class = StatusPedidoSerializer

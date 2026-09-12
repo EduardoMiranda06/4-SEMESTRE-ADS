@@ -1,5 +1,3 @@
-Web
- 
 --Criando 01--
  
 1 - python -m venv venv
@@ -20,3 +18,9 @@ Web
 7 - python manage.py createsuperuser
 8 - python manage.py makemigratons
 9 - python manage.py runserver 0.0.0.0:8000
+
+*EM CASO DE FALHA*
+
+Comando para permitir ativar o venv no terminal 
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+ 
