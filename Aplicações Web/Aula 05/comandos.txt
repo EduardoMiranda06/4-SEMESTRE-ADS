@@ -23,4 +23,3 @@
 
 Comando para permitir ativar o venv no terminal 
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
- 
