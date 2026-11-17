@@ -24,8 +24,7 @@ Aplicativo Flutter de planejamento de viagens (Aula 08 - Aplicações Mobile).
 
 Login de teste: `admin@smhotel.com` / `123456`
 
-## Entrega
-Suba o projeto em um repositório no GitHub:
+## ABRIR
 ```
 git init
 git add .
