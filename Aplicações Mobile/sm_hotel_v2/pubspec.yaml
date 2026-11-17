@@ -1,0 +1,34 @@
+name: sm_hotel
+description: Aplicativo S&M Hotel - planejamento de viagens.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.1.2
+  http: ^1.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - imagens/angra.jpg
+    - imagens/arraial.jpg
+    - imagens/chile.jpg
+    - imagens/flori.jpg
+    - imagens/jeri.jpg
+    - imagens/lasvegas.jpg
+    - imagens/madri.jpg
+    - imagens/orlando.jpg
+    - imagens/paris.jpg
+    - imagens/roma.jpg
