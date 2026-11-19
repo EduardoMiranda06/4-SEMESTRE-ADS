@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Rye&display=swap');
+:root{font-family:'Special Elite',Georgia,serif;color:#20170f;background:#d8b887;font-synthesis:none;text-rendering:optimizeLegibility;--panel-h:clamp(300px,30vw,460px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-width:320px;background:#d8b887}
+button{font:inherit;cursor:pointer}
+
+.art-section{position:relative;width:100%;background-position:center;background-repeat:no-repeat;background-size:100% 100%;overflow:hidden}
+.cover{aspect-ratio:1672/941;min-height:430px}
+.experiments{aspect-ratio:1981/794;min-height:470px}
+.ending{aspect-ratio:1672/940;min-height:430px}
+
+.cover-hit{position:absolute;inset:0;border:0;background:transparent}
+.scroll-hint{position:absolute;bottom:2.3%;left:50%;transform:translateX(-50%);font-size:clamp(9px,.8vw,14px);letter-spacing:2px;color:#38291c;background:#e8c99bba;padding:7px 15px;cursor:pointer}
+.scroll-hint span{font-size:1.5em;margin-left:8px}
+
+/* ---------- Experimentos (desktop) ---------- */
+/* Botões invisíveis posicionados sobre os botões que já existem na imagem. */
+.hotspot{position:absolute;border:0;background:transparent;padding:0;height:5.9%;top:47.1%}
+.hotspot:hover{outline:3px dashed #bd302b;outline-offset:2px}
+.hotspot:focus-visible{outline:3px solid #1d4f9c;outline-offset:2px}
+.hotspot-1{left:6.15%;width:27%;transform:rotate(-3deg)}
+.hotspot-2{left:36.8%;width:28.1%;top:47.9%;transform:rotate(-.5deg)}
+.hotspot-3{left:68.5%;width:26.5%;top:47.6%;transform:rotate(-1deg)}
+
+.mobile-ui{display:none}
+
+/* Painel de experimento: cobre exatamente a caixa tracejada da imagem */
+.ar-panel{position:absolute;left:9.5%;top:70.8%;width:81%;height:21.9%}
+.waiting{display:none}
+.ar-panel.open{height:var(--panel-h)}
+.active-experiment{position:absolute;inset:0;background:#efdfbe;border:2px dashed #302419;padding:8px 12px 12px;display:flex;flex-direction:column;box-shadow:4px 5px 0 #39291c}
+.active-heading{display:flex;align-items:center;gap:14px;font-size:clamp(10px,1vw,16px)}
+.active-heading>span{background:#e5c89b;padding:3px 6px}
+.active-heading strong{font-family:'Rye',Georgia,serif;font-size:1.25em}
+.close{margin-left:auto;background:transparent;border:1px solid #332519;padding:4px 10px;font-size:11px}
+
+/* Quando abre, a seção cresce para baixo (empurra o encerramento) em vez de cortar o painel */
+.experiments.is-active{overflow:visible;z-index:2;margin-bottom:max(0px,calc(var(--panel-h) - 8.7vw + 12px))}
+
+/* ---------- Encerramento ---------- */
+.back-home{position:absolute;left:36.8%;top:74.7%;width:25.3%;height:10.7%;border:0;background:transparent;padding:0;border-radius:50%}
+.back-home:hover{outline:2px dashed #efc56f;outline-offset:2px}
+.back-home:focus-visible{outline:3px solid #efc56f}
+
+/* ---------- Vídeo da câmera do AR.js dentro do painel ---------- */
+/* O AR.js aplica estilos inline, por isso o !important */
+.scene-wrap #arjs-video{position:absolute!important;inset:0!important;top:0!important;left:0!important;width:100%!important;height:100%!important;margin:0!important;object-fit:cover;z-index:0!important}
+.scene-wrap .a-canvas,.scene-wrap canvas{background:transparent!important}
+/* Texto de erro cru que o AR.js joga no fim da página (o erro é mostrado dentro do painel) */
+#error-popup{display:none!important}
+
+/* ---------- Celular ---------- */
+@media(max-width:700px){
+  .cover{min-height:320px;aspect-ratio:1/1.05;background-size:auto 100%}
+
+  /* A imagem de experimentos é larga demais para o celular: troca por cartões em HTML */
+  .experiments{aspect-ratio:auto;min-height:0;background-image:none!important;background-color:#d8b887;padding:28px 16px 36px;display:flex;flex-direction:column;gap:14px}
+  .experiments.is-active{margin-bottom:0;overflow:hidden}
+  .hotspot{display:none}
+  .mobile-ui{display:flex;flex-direction:column;gap:14px}
+  .mobile-ui h2{margin:6px 0 0;text-align:center;font:400 22px 'Rye',Georgia,serif;color:#20170f}
+  .m-card{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;border:2px solid #2a2118;padding:14px;box-shadow:4px 5px 0 #2b2118;color:#1e1711}
+  .m-card small{background:#f1dfbf;padding:2px 6px;font-size:11px}
+  .m-card strong{font:400 20px 'Rye',Georgia,serif}
+  .m-card span{font-size:13px}
+  .m-card em{align-self:stretch;margin-top:4px;background:#f1dfbf;border:2px solid #2a2118;padding:8px 10px;font-style:normal;font-weight:bold;font-size:12px}
+  .m-card-1{background:#f0b429}.m-card-2{background:#7da0d1}.m-card-3{background:#ee9ab8}
+
+  .ar-panel{position:static;width:100%;height:auto;min-height:150px}
+  .ar-panel.open{height:min(70vh,440px)}
+  .waiting{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:150px;background:#efdfbe;border:2px dashed #302419;text-align:center;font-size:13px}
+  .plus{font-family:Arial;border:1px solid #54719a;color:#54719a;border-radius:50%;width:34px;height:34px;display:grid;place-items:center;font-size:24px}
+  .active-experiment{position:relative;height:100%}
+
+  .ending{min-height:430px;aspect-ratio:1/1.05;background-size:auto 100%}
+  .back-home{left:24%;width:52%}
+}
