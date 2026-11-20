@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Rye&display=swap');
-:root{font-family:'Special Elite',Georgia,serif;color:#20170f;background:#d8b887;font-synthesis:none;text-rendering:optimizeLegibility;--panel-h:clamp(300px,30vw,460px)}
+:root{font-family:'Special Elite',Georgia,serif;color:#20170f;background:#d8b887;font-synthesis:none;text-rendering:optimizeLegibility;--panel-h:clamp(420px,min(46vw,82vh),760px)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;min-width:320px;background:#d8b887}
@@ -68,7 +68,7 @@ button{font:inherit;cursor:pointer}
   .m-card-1{background:#f0b429}.m-card-2{background:#7da0d1}.m-card-3{background:#ee9ab8}
 
   .ar-panel{position:static;width:100%;height:auto;min-height:150px}
-  .ar-panel.open{height:min(70vh,440px)}
+  .ar-panel.open{height:min(80vh,600px)}
   .waiting{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:150px;background:#efdfbe;border:2px dashed #302419;text-align:center;font-size:13px}
   .plus{font-family:Arial;border:1px solid #54719a;color:#54719a;border-radius:50%;width:34px;height:34px;display:grid;place-items:center;font-size:24px}
   .active-experiment{position:relative;height:100%}

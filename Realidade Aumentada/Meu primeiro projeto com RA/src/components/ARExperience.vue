@@ -97,17 +97,34 @@ onBeforeUnmount(() => {
     <div ref="wrap" class="scene-wrap">
       <a-scene v-if="status === 'ready'" embedded arjs="sourceType: webcam; debugUIEnabled: false;" vr-mode-ui="enabled: false" renderer="logarithmicDepthBuffer: true">
         <a-marker preset="hiro">
-          <a-entity v-if="experiment.id === 1" position="0 0.4 0">
-            <a-box position="0 0.45 0" material="color: #d69b36; roughness: 0.7"></a-box>
-            <a-torus position="0 0.45 0.55" rotation="90 0 0" radius="0.42" radius-tubular="0.045" material="color: #24201b"></a-torus>
-            <a-text value="CAMERA / CAM" align="center" position="0 1.2 0" color="#21180f" width="4"></a-text>
+          <!-- rotation -90 0 0: em pé, de frente para quem olha, com o marcador na vertical (tela/parede).
+               Se imprimir e deitar o marcador numa mesa, troque por rotation="0 0 0". -->
+
+          <!-- EXPERIMENTO 1: câmera retrô -->
+          <a-entity v-if="experiment.id === 1" position="0 0.3 0" rotation="-90 0 0">
+            <a-box width="1.1" height="0.62" depth="0.42" material="color: #2a2826; roughness: 0.6"></a-box>
+            <a-box width="1.1" height="0.2" depth="0.42" position="0 0.41 0" material="color: #d8d2c2; metalness: 0.6; roughness: 0.35"></a-box>
+            <a-box width="0.3" height="0.14" depth="0.3" position="-0.33 0.58 0" material="color: #1c1b1a"></a-box>
+            <a-cylinder radius="0.055" height="0.07" position="0.38 0.55 0" material="color: #b8362e; metalness: 0.3"></a-cylinder>
+            <a-box width="0.18" height="0.1" depth="0.05" position="0.38 0.1 0.22" material="color: #c9c4b5"></a-box>
+            <a-cylinder radius="0.3" height="0.32" rotation="90 0 0" position="0 0 0.3" material="color: #191919; roughness: 0.4"></a-cylinder>
+            <a-torus radius="0.3" radius-tubular="0.03" position="0 0 0.47" material="color: #cfcfcf; metalness: 0.8; roughness: 0.25"></a-torus>
+            <a-circle radius="0.22" position="0 0 0.475" material="color: #16365a; metalness: 0.7; roughness: 0.1"></a-circle>
+            <a-circle radius="0.09" position="0 0 0.48" material="color: #0a0f18"></a-circle>
+            <a-circle radius="0.04" position="0.1 0.1 0.485" material="color: #ffffff; shader: flat"></a-circle>
           </a-entity>
-          <a-entity v-if="experiment.id === 3" position="0 0.5 0">
-            <a-sphere position="-0.28 0.45 0" radius="0.22" material="color: #f4e6c9"></a-sphere>
-            <a-sphere position="0.28 0.45 0" radius="0.22" material="color: #f4e6c9"></a-sphere>
-            <a-sphere position="-0.28 0.45 0.18" radius="0.09" material="color: #17120f"></a-sphere>
-            <a-sphere position="0.28 0.45 0.18" radius="0.09" material="color: #17120f"></a-sphere>
-            <a-text value="ESTOU DE OLHO" align="center" position="0 1.05 0" color="#21180f" width="4"></a-text>
+
+          <!-- EXPERIMENTO 3: olhos -->
+          <a-entity v-if="experiment.id === 3" position="0 0.3 0" rotation="-90 0 0">
+            <a-sphere radius="0.32" position="-0.38 0 0" scale="1 1 0.7" material="color: #f6f0e4; roughness: 0.3"></a-sphere>
+            <a-sphere radius="0.32" position="0.38 0 0" scale="1 1 0.7" material="color: #f6f0e4; roughness: 0.3"></a-sphere>
+            <a-sphere radius="0.15" position="-0.38 0 0.2" material="color: #4a2f1c"></a-sphere>
+            <a-sphere radius="0.15" position="0.38 0 0.2" material="color: #4a2f1c"></a-sphere>
+            <a-sphere radius="0.075" position="-0.38 0 0.33" material="color: #050505; shader: flat"></a-sphere>
+            <a-sphere radius="0.075" position="0.38 0 0.33" material="color: #050505; shader: flat"></a-sphere>
+            <a-box width="0.6" height="0.07" depth="0.07" position="-0.38 0.45 0.05" rotation="0 0 -12" material="color: #1a1410"></a-box>
+            <a-box width="0.6" height="0.07" depth="0.07" position="0.38 0.45 0.05" rotation="0 0 12" material="color: #1a1410"></a-box>
+            <a-text value="ESTOU DE OLHO" align="center" position="0 -0.62 0.1" color="#ffe066" width="3"></a-text>
           </a-entity>
         </a-marker>
         <a-entity camera></a-entity>
